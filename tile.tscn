@@ -6,3 +6,4 @@
 [node name="Tile" type="Sprite2D"]
 texture = ExtResource("1_xu5hi")
 script = ExtResource("2_tl0ta")
+debug = Color(0.752941, 0.27451, 0, 1)
