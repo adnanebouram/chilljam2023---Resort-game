@@ -7,5 +7,5 @@ extends Sprite2D
 func _input(event):
 	if event.is_action("click"):
 		if event.is_pressed():
-			if get_rect().has_point(to_local(event.position)):
+			if get_rect().has_point(get_local_mouse_position()):
 				modulate = debug
