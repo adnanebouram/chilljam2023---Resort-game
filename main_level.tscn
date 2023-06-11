@@ -7,9 +7,9 @@
 
 [node name="Node" type="Node2D" parent="."]
 script = ExtResource("1_o3t3q")
-size = Vector2(10, 10)
+size = Vector2(5, 4)
 bounds = Vector2(128, 128)
-padding = 1
+padding = 1.02
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_7ffso")
@@ -37,6 +37,32 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Camera2D/Control/q"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 143.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 20
+
+[node name="pharmacy" type="Button" parent="Camera2D/Control/q/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="bar" type="Button" parent="Camera2D/Control/q/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="advertisement" type="Button" parent="Camera2D/Control/q/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="voleyball" type="Button" parent="Camera2D/Control/q/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="master" type="GridContainer" parent="Camera2D/Control/q"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,14 +70,36 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -450.0
-offset_top = -14.5
+offset_top = -52.5
 offset_right = 450.0
-offset_bottom = 15.5
+offset_bottom = 6.5
 grow_horizontal = 2
 grow_vertical = 2
-columns = 20
+columns = 100
 
-[node name="Button" type="Button" parent="Camera2D/Control/q/GridContainer"]
-custom_minimum_size = Vector2(30, 30)
+[node name="desect" type="Button" parent="Camera2D/Control/q/master"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
-text = "panel"
+
+[node name="inverse" type="Button" parent="Camera2D/Control/q/master"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="moneymanager" type="Label" parent="Camera2D/Control/q"]
+layout_mode = 0
+offset_top = -472.0
+offset_right = 449.0
+offset_bottom = -449.0
+
+[node name="satisfaction" type="Label" parent="Camera2D/Control/q"]
+layout_mode = 0
+offset_top = -472.0
+offset_right = 449.0
+offset_bottom = -449.0
+
+[connection signal="pressed" from="Camera2D/Control/q/GridContainer/pharmacy" to="Node" method="_on_pharmacy_pressed"]
+[connection signal="pressed" from="Camera2D/Control/q/GridContainer/bar" to="Node" method="_on_bar_pressed"]
+[connection signal="pressed" from="Camera2D/Control/q/GridContainer/advertisement" to="Node" method="_on_advertisement_pressed"]
+[connection signal="pressed" from="Camera2D/Control/q/GridContainer/voleyball" to="Node" method="_on_voleyball_pressed"]
+[connection signal="pressed" from="Camera2D/Control/q/master/desect" to="Node" method="_on_desect_pressed"]
+[connection signal="pressed" from="Camera2D/Control/q/master/inverse" to="Node" method="_on_inverse_pressed"]
